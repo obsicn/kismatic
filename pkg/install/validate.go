@@ -244,6 +244,7 @@ func (c *CloudProvider) validate() (bool, []error) {
 func (f *AddOns) validate() (bool, []error) {
 	v := newValidator()
 	v.validate(f.CNI)
+	v.validate(f.DNS)
 	v.validate(f.HeapsterMonitoring)
 	v.validate(&f.PackageManager)
 	return v.valid()
@@ -262,6 +263,16 @@ func (n *CNI) validate() (bool, []error) {
 			if !util.Contains(n.Options.Calico.LogLevel, calicoLogLevel()) {
 				v.addError(fmt.Errorf("%q is not a valid Calico log level. Options are %v", n.Options.Calico.LogLevel, calicoLogLevel()))
 			}
+		}
+	}
+	return v.valid()
+}
+
+func (n DNS) validate() (bool, []error) {
+	v := newValidator()
+	if !n.Disable {
+		if !util.Contains(n.Provider, dnsProviders()) {
+			v.addError(fmt.Errorf("%q is not a valid DNS provider. Optins are %v", n.Provider, dnsProviders()))
 		}
 	}
 	return v.valid()

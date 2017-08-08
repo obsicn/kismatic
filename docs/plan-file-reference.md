@@ -59,6 +59,7 @@
         * [felix_input_mtu](#add_onscnioptionscalicofelix_input_mtu)
   * [dns](#add_onsdns)
     * [disable](#add_onsdnsdisable)
+    * [provider](#add_onsdnsprovider)
   * [heapster](#add_onsheapster)
     * [disable](#add_onsheapsterdisable)
     * [options](#add_onsheapsteroptions)
@@ -613,6 +614,17 @@
 | **Kind** |  bool |
 | **Required** |  No |
 | **Default** | `false` | 
+
+###  add_ons.dns.provider
+
+ This property indicates the in-cluster DNS provider. 
+
+| | |
+|----------|-----------------|
+| **Kind** |  string |
+| **Required** |  Yes |
+| **Default** | `kubedns` | 
+| **Options** |  `kubedns`, `coredns`
 
 ###  add_ons.heapster
 
