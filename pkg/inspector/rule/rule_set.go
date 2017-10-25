@@ -5,6 +5,17 @@ import (
 	"strings"
 )
 
+/*
+- kind: __RuleName__
+  when:
+  - ["etcd", "master", "worker", "ingress", "storage"]
+  - ["rhel", "centos"]
+  ...
+
+This rule will be executed when the node has these facts:
+  ("etcd" OR "master" OR "worker" OR "ingress" OR "storage") AND ("rhel" OR "centos")
+*/
+
 // DefaultRuleSet is the list of rules that are built into the inspector
 const defaultRuleSet = `---
 - kind: FreeSpace
