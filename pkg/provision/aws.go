@@ -63,7 +63,7 @@ func (aws AWS) Provision(plan install.Plan) (*install.Plan, error) {
 		PrivateSSHKeyPath: privKeyPath,
 		PublicSSHKeyPath:  pubKeyPath,
 	}
-	b, err := json.Marshal(data)
+	b, err := json.MarshalIndent(data, "", "  ")
 	if err != nil {
 		return nil, err
 	}

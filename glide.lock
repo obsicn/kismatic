@@ -1,5 +1,5 @@
-hash: fb3da16a5093d86bb1350dce9f7e44a41591b4b253154dc61a8d3aa35c73e654
-updated: 2017-12-08T13:16:39.332428-05:00
+hash: b174a6695087d737a5f02f4435b439f906186dadbca817f51a8f54c738c2ee3c
+updated: 2017-12-11T14:16:00.329155274-05:00
 imports:
 - name: github.com/aws/aws-sdk-go
   version: 40f45e34986ba617a372d1590de273a0ca84a53d
@@ -90,6 +90,10 @@ imports:
   - go/client
   - go/x509
   - go/x509/pkix
+- name: github.com/google/go-cmp
+  version: 8099a9787ce5dc5984ed879a3bda47dc730a8e97
+  subpackages:
+  - cmp
 - name: github.com/gosuri/uilive
   version: ac356e6e42cd31fcef8e6aec13ae9ed6fe87713e
 - name: github.com/inconshreveable/mousetrap
