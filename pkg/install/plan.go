@@ -252,13 +252,6 @@ func (fp *FilePlanner) PlanExists() bool {
 
 // WritePlanTemplate writes an installation plan with pre-filled defaults.
 func WritePlanTemplate(planTemplateOpts PlanTemplateOptions, w PlanReadWriter) error {
-	if planTemplateOpts.AdminPassword == "" {
-		pw, err := generateAlphaNumericPassword()
-		if err != nil {
-			return fmt.Errorf("error generating random password: %v", err)
-		}
-		planTemplateOpts.AdminPassword = pw
-	}
 	p := buildPlanFromTemplateOptions(planTemplateOpts)
 	if err := w.Write(&p); err != nil {
 		return fmt.Errorf("error writing installation plan template: %v", err)

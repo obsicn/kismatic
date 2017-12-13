@@ -2,7 +2,7 @@
 ## Index
 * [cluster](#cluster)
   * [name](#clustername)
-  * [admin_password](#clusteradmin_password)
+  * [admin_password _(deprecated)_](#clusteradmin_password-deprecated)
   * [disable_package_installation](#clusterdisable_package_installation)
   * [allow_package_installation _(deprecated)_](#clusterallow_package_installation-deprecated)
   * [disconnected_installation](#clusterdisconnected_installation)
@@ -145,14 +145,14 @@
 | **Required** |  Yes |
 | **Default** | ` ` | 
 
-###  cluster.admin_password
+###  cluster.admin_password _(deprecated)_
 
- The password for the admin user. This is mainly used to access the Kubernetes Dashboard. 
+ The password for the admin user. This is mainly used to access the Kubernetes Dashboard. For new installations this will not be used. This field will be removed completely in a future release. 
 
 | | |
 |----------|-----------------|
 | **Kind** |  string |
-| **Required** |  Yes |
+| **Required** |  No |
 | **Default** | ` ` | 
 
 ###  cluster.disable_package_installation
