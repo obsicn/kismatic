@@ -5,14 +5,11 @@ provider "azurerm" {
   $ export ARM_CLIENT_SECRET = your_client_secret
   $ export AWS_DEFAULT_REGION=us-east-1
   */
-  region      = "${var.region}"
-  access_key  = "${var.access_key}"
-  secret_key  = "${var.secret_key}"
+  subscription_id = "${var.sub_id}"
+  client_id       = "${var.client_id}"
+  client_secret   = "${var.client_secret}"
+  tenant_id       = "${var.tenant_id}"
 }
 
-resource "aws_key_pair" "kismatic" {
-  key_name   = "${var.cluster_name}"
-  public_key = "${file("${var.public_ssh_key_path}")}"
-}
 
 
